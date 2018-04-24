@@ -1,3 +1,38 @@
-<p>
-  card-list works!
-</p>
+<div class="container">
+    <div class="flip-container" (ontouchstart)="switchCard()">
+        <div class="row">
+            <!-- <shiba-card></shiba-card> -->
+
+
+            <div class="flipper">
+                <div class="front">
+                    <img [src]="card.urlImage" alt="">
+                    <!-- front content -->
+                </div>
+                <div class="back">
+                    <p>
+                        {{card.text}}
+                    </p>
+                    <!-- back content -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- <div class="flip-container" (ontouchstart)="switchCard()">
+        <div class="flipper">
+            <div class="front">
+                Frente
+               
+            </div>
+            <div class="back">
+                Back
+                
+            </div>
+        </div>
+    </div> -->
+
+</div>
