@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Card } from "../../models/card";
+import { CardApiService } from '../card-api.service';
+
 @Component({
   selector: 'shiba-card-list',
   templateUrl: './card-list.component.html',
@@ -42,17 +44,23 @@ import { Card } from "../../models/card";
   `]
 })
 export class CardListComponent implements OnInit {
-  card = new Card('http://cdn.shibe.online/shibes/1ea5381d4e2c6bc6f6d98484daffc4dcfa36c2f5.jpg'
-,"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, odit. Dolorum nam culpa maxime ex corrupti, possimus ipsum suscipit iure asperiores id explicabo officiis officia quia vitae. Quisquam, omnis amet."
-,"")
-  constructor() { }
+
+public cardList:Card ;
+
+  constructor(private cardApi:CardApiService) { }
 
   ngOnInit() {
+     
+    let phrase:string
+    ,url:string
+    
+    this.cardApi.fetchPhrase()
+    .subscribe(phrases=> {phrase=phrases[0]})
+    this.cardApi.fetchImage()
+    .subscribe(cards=>{url=cards[0]}) 
+      this.cardList = new Card(url,phrase,'unknow') 
+      console.log(this.cardList)  
   }
-
-  switchCard(){
-    // classList.toggle('hover'); 
-    // console.log('POP');
-    alert('POP');
-  }
+  
+  
 }

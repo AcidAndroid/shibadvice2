@@ -1,17 +1,17 @@
 <div class="container">
-    <div class="flip-container" (ontouchstart)="switchCard()">
+    <div class="flip-container">
         <div class="row">
             <!-- <shiba-card></shiba-card> -->
 
 
             <div class="flipper">
                 <div class="front">
-                    <img [src]="card.urlImage" alt="">
+                    <img [src]="cardList.urlImage" alt="">
                     <!-- front content -->
                 </div>
                 <div class="back">
                     <p>
-                        {{card.text}}
+                        {{cardList.text}}
                     </p>
                     <!-- back content -->
                 </div>
