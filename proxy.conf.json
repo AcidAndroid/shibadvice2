@@ -7,5 +7,14 @@
             "^/shibes": ""
         },
         "changeOrigin": true
+    },
+    "/phrases": {
+        "target": "http://quotesondesign.com/wp-json/posts?filter[orderby]=rand",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/phrases": ""
+        },
+        "changeOrigin": true
     }
 }

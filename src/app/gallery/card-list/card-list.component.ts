@@ -60,7 +60,7 @@ public cardList:Card ;
     //debugger
     console.log(this.cardApi.fetchPhrase())
     this.cardApi.fetchPhrase()
-    .subscribe(phrases=> {phrase=phrases[0]
+    .subscribe(phrases=> {phrase=phrases[0].content      
       this.cardList.text=phrase
       console.log('Phrase:' + phrase);
     })

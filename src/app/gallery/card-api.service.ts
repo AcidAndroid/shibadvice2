@@ -20,7 +20,7 @@ export class CardApiService {
 
   fetchPhrase(){
     // return this.http.get(`${environment.apiImage}count=1/`)    
-    return this.http.get('/shibes/api/shibes?count=1')
+    return this.http.get('/phrases')
   }
 
 }
