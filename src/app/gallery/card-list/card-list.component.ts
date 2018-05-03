@@ -54,12 +54,28 @@ public cardList:Card ;
     let phrase:string
     ,url:string
     
-    this.cardApi.fetchPhrase()
-    .subscribe(phrases=> {phrase=phrases[0]})
-    this.cardApi.fetchImage()
-    .subscribe(cards=>{url=cards[0]}) 
-      this.cardList = new Card(url,phrase,'unknow') 
+    this.cardList = new Card(url,phrase,'unknow') 
       console.log(this.cardList)  
+
+    //debugger
+    console.log(this.cardApi.fetchPhrase())
+    this.cardApi.fetchPhrase()
+    .subscribe(phrases=> {phrase=phrases[0]
+      this.cardList.text=phrase
+      console.log('Phrase:' + phrase);
+    })
+    
+    //debugger
+    this.cardApi.fetchImage()
+    .subscribe(cards=>{     
+      url=cards[0]
+      this.cardList.urlImage=url
+      console.log('Url:' + url);
+    }  
+    )
+    console.log(url)
+    console.log(phrase)
+      
   }
   
   

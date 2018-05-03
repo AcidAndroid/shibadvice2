@@ -11,13 +11,16 @@ export class CardApiService {
   constructor(private http:HttpClient) { }
 
   fetchImage(){        
-    return this.http.get(`${environment.apiImage}count=1/`)    
+   
+    // debugger    
+    return this.http.get('/shibes/api/shibes?count=1')
     
 
   }
 
   fetchPhrase(){
-    return this.http.get(`${environment.apiImage}count=1/`)    
+    // return this.http.get(`${environment.apiImage}count=1/`)    
+    return this.http.get('/shibes/api/shibes?count=1')
   }
 
 }
