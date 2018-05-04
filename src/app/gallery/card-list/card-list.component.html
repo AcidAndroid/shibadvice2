@@ -9,10 +9,10 @@
                     <img [src]="cardList.urlImage" alt="">
                     <!-- front content -->
                 </div>
-                <div class="back">
-                    <p>
-                        {{cardList.text}}
-                    </p>
+                <div class="back" [innerHtml]="cardList.text">
+
+
+
                     <!-- back content -->
                 </div>
             </div>
